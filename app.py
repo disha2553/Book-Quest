@@ -171,4 +171,4 @@ with gr.Blocks() as demo:
     )
 demo.queue()
 if __name__ == "__main__":
-    demo.launch()
+    demo.launch(share=True, port=7860)
