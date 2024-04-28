@@ -173,4 +173,4 @@ demo.queue()
 if __name__ == "__main__":
     #demo.server_name = "0.0.0.0"  
     #demo.server_port = 8080
-    demo.launch(share=True, server_name = "127.0.0.1" , server_port = 7860 )
+    demo.launch(share=True, server_name = "0.0.0.0")
