@@ -184,5 +184,5 @@ with gr.Blocks(title="BOOK QUEST", css=css_path, ) as demo:
     )
 demo.queue()
 if __name__ == "__main__":
-    demo.launch(share=True)
-    #demo.launch(share=True, server_name = "0.0.0.0")
+    #demo.launch(share=True)
+    demo.launch(share=True, server_name = "0.0.0.0")
