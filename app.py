@@ -101,11 +101,22 @@ def render_file(file):
     draw.text((10, 10), answer, fill="red", font=font)
     
     return image
-
+css_path = 'gradio.css'
 # Gradio application setup
-with gr.Blocks() as demo:
+with gr.Blocks(title="BOOK QUEST", css=css_path, ) as demo:
     # Create a Gradio block
-
+    
+    with gr.Row():
+        
+        with gr.Column(scale=1):
+            container = gr.HTML(
+                """
+                <div style ='display: inline-flex; background-color:white ; padding: 10px; border-radius: 20px; margin-left: 36%; justify-content: center;'>
+                    <img  src='file/logo.jpg' alt='image One'; width="60"; height="60"; margin-left:20px;>
+                    <h1 style=' font-size: 50px; font-weight: bold; color: 	midnightblue; text-align: center; margin: 0;padding-left: 15px;'>BOOK QUEST</h1>
+                </div>
+                """
+            )
     with gr.Column():
         with gr.Row():
             with gr.Column(scale=0.8):
@@ -118,8 +129,8 @@ with gr.Blocks() as demo:
                 change_api_key = gr.Button('Change Key')
 
         with gr.Row():
-            chatbot = gr.Chatbot(value=[], elem_id='chatbot').style(height=520)
-            show_img = gr.Image(label='Upload PDF', tool='select').style(height=550)
+            chatbot = gr.Chatbot(value=[], elem_id='chatbot').style(height=420)
+            show_img = gr.Image(label='Upload PDF', tool='select').style(height=450)
 
     with gr.Row():
         with gr.Column(scale=0.70):
@@ -171,6 +182,5 @@ with gr.Blocks() as demo:
     )
 demo.queue()
 if __name__ == "__main__":
-    #demo.server_name = "0.0.0.0"  
-    #demo.server_port = 8080
+    #demo.launch(share=True)
     demo.launch(share=True, server_name = "0.0.0.0")
