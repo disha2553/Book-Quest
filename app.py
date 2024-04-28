@@ -28,8 +28,10 @@ def set_apikey(api_key):
 
 # Function to clear chat history
 def clear_history(history):
-    history.clear()
-    return history
+    global COUNT, N, chat_history
+    COUNT = 0
+    N = 0
+    chat_history.clear()
 
 
 # Function to enable the API key input box
@@ -81,7 +83,7 @@ def generate_response(history, query, btn):
 # Function to render a specific page of a PDF file as an image
 def render_file(file):
     global N, chat_history
-    
+   
     doc = fitz.open(file.name)
     page = doc[N]
     
@@ -161,7 +163,7 @@ with gr.Blocks(title="BOOK QUEST", css=css_path, ) as demo:
         # Event handler for clearing chat history
     clear_btn.click(
         fn=clear_history,
-        inputs=[chatbot],
+        inputs=[],
         outputs=[chatbot]
     )
 
@@ -182,5 +184,5 @@ with gr.Blocks(title="BOOK QUEST", css=css_path, ) as demo:
     )
 demo.queue()
 if __name__ == "__main__":
-    #demo.launch(share=True)
-    demo.launch(share=True, server_name = "0.0.0.0")
+    demo.launch(share=True)
+    #demo.launch(share=True, server_name = "0.0.0.0")
