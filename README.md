@@ -97,5 +97,12 @@ Check out the working project here: https://book-quest-6c2f.onrender.com/
 
 ---
 
+## **Contributors**
+
+- Vaishnavi Sanjay Mane
+- Disha Hemant Joshi
+- Purva Deepak Agine
+- Durva Darshan Desai
+
 
 
